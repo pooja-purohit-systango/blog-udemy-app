@@ -12,6 +12,7 @@ export default function Home() {
       image: '/images/posts/nextjs.jpg',
       excerpt: 'Learn the basics of Next.js in this introductory post.',
       slug: 'getting-started-nextjs',
+      content: ''
     },
   ];
 
