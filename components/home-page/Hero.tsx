@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import FeaturedPosts from "./FeaturedPosts";
 
 const Hero = () => {
   return (
@@ -16,6 +17,7 @@ const Hero = () => {
         I'm a passionate web developer who writes about modern web technologies,
         especially front-end frameworks like React, Next.js, and more.
       </p>
+
     </section>
   );
 };

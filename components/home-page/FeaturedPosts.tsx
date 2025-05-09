@@ -1,8 +1,22 @@
 import React from 'react'
+import PostsList from '../posts/PostsList'
+import { Post } from '@/types/post-type';
 
-const FeaturedPosts = () => {
+
+interface FeaturedPostsProps {
+    posts: Post[];
+  }
+
+const FeaturedPosts = (props : FeaturedPostsProps) => {
+    const posts =  props.posts; 
   return (
-    <div>FeaturedPosts</div>
+    <>
+    <section>
+        <h1>Featured Posts</h1>
+        <PostsList posts ={posts} />
+    </section>
+    </>
+   
   )
 }
 

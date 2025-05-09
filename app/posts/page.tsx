@@ -1,8 +1,12 @@
+import PostsList from '@/components/posts/PostsList'
 import React from 'react'
 
 const AllPostspPage = () => {
   return (
-    <div>AllPostspPage</div>
+    <>
+     <div>All Posts</div>
+     {/* <PostsList /> */}
+    </>
   )
 }
 
