@@ -4,7 +4,6 @@ import React from "react";
 
 const PostItem = (props: any) => {
   const post = props.post;
- // console.log( "post in postItem compo", post)
 
   return (
     <li className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">

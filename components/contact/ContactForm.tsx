@@ -31,48 +31,57 @@ const ContactForm = () => {
   }
 
   return (
-    <div>
-      <h1>How can I help you?</h1>
-      <form onSubmit={sendMessageHandler}>
+    <>
+      
+      <form onSubmit={sendMessageHandler} className="space-y-6">
         <div>
-          <label htmlFor="emal">Your Email</label>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email</label>
           <input
             type="email"
             id="email"
             required
             value={enteredEmail}
             onChange={(event) => setEnteredEmail(event.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
         </div>
 
         <div>
-          <label htmlFor="name">Your Name</label>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
           <input
             type="text"
             id="name"
             required
             value={enteredName}
             onChange={(event) => setEnteredName(event.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black" 
           />
         </div>
 
         <div>
-          <label htmlFor="message">Your Message</label>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Your Message</label>
           <textarea
             id="message"
             required
             value={enteredMessage}
             onChange={(event) => setEnteredMessage(event.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
         </div>
 
-        <div>
-          <button>Send Message</button>
+        <div className="flex justify-center">
+          <button className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            Send Message
+          </button>
         </div>
       </form>
 
-      {isSuccess && <p style={{ color: "green" }}>Your message has been sent!</p>}
-    </div>
+      {isSuccess && (
+        <p className="text-green-600 text-center mt-4">
+          Your message has been sent!
+        </p>
+      )}
+    </>
   );
 };
 

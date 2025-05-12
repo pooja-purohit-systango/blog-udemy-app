@@ -7,12 +7,12 @@ const PostContent = ({ postDetail }: { postDetail: PostData }) => {
   console.log("post content page", postDetail);
 
   return (
-    <article className="max-w-2xl mx-auto my-8 p-4 bg-white shadow rounded-lg">
+    <article className="max-w-2xl mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
       <PostHeader
         title={postDetail.title}
         image={postDetail.image}
       />
-      <div className="mt-6 text-gray-700 leading-relaxed">
+      <div className="mt-6 text-gray-700 leading-relaxed space-y-4">
         <ReactMarkdown>{postDetail.content}</ReactMarkdown>
       </div>
     </article>
@@ -20,4 +20,3 @@ const PostContent = ({ postDetail }: { postDetail: PostData }) => {
 };
 
 export default PostContent;
-

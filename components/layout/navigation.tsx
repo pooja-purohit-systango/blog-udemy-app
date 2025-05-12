@@ -4,16 +4,14 @@ import Link from 'next/link'
 
 const MainNavigation = () => {
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/">
-          <div className="cursor-pointer">
-            <Logo />
-          </div>
+        <Link href="/" className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
+          <Logo />
         </Link>
 
         <nav>
-          <ul className="flex space-x-6 text-gray-700 font-medium">
+          <ul className="flex gap-6 text-gray-700 font-medium">
             <li>
               <Link
                 href="/posts"
@@ -27,7 +25,7 @@ const MainNavigation = () => {
                 href="/contact"
                 className="hover:text-blue-600 transition-colors"
               >
-                Contacts
+                Contact
               </Link>
             </li>
           </ul>
