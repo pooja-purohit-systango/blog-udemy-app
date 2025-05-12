@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from "react";
+import ReactDOM from 'react-dom'; 
 
 const ContactForm = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -23,11 +24,16 @@ const ContactForm = () => {
     });
 
     if (response.ok) {
-      setIsSuccess(true); // Show success message
-      setEnteredEmail("");
-      setEnteredName("");
-      setEnteredMessage("");
-    }
+        setIsSuccess(true); // Show success message
+        setEnteredEmail("");
+        setEnteredName("");
+        setEnteredMessage("");
+  
+        // Hide the success message after 3 seconds
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 3000); // 3000ms = 3 seconds
+      }
   }
 
   return (
@@ -76,11 +82,13 @@ const ContactForm = () => {
         </div>
       </form>
 
-      {isSuccess && (
-        <p className="text-green-600 text-center mt-4">
-          Your message has been sent!
-        </p>
-      )}
+      {isSuccess &&
+        ReactDOM.createPortal(
+          <div className="fixed top-20 left-1/2 transform -translate-x-1/2 p-4 bg-green-100 text-green-700 rounded-md shadow-md">
+            Your message has been sent!
+          </div>,
+          document.getElementById("portal-root")! 
+        )}
     </>
   );
 };
