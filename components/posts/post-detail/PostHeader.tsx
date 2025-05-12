@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 const PostHeader = (props: any) => {
   const { title, image } = props;
@@ -7,7 +7,7 @@ const PostHeader = (props: any) => {
     <header className="text-center p-8 bg-gray-100 rounded-xl shadow-md">
       <h1 className="text-3xl font-semibold text-gray-800 mb-4">{title}</h1>
       <Image
-        src={image}
+       src={`/images/posts/${image}`}
         height={200}
         width={300}
         alt="The post"

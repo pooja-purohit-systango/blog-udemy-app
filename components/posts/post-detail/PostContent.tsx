@@ -1,32 +1,23 @@
 import React from 'react';
 import PostHeader from './PostHeader';
-import { Post } from '@/types/post-type';
-import ReactMarkdown from 'react-markdown'
-const DUMMY_POSTS: Post[] = [
-  {
-    id: 'p1',
-    title: 'Getting Started with Next.js',
-    date: '2025-05-01',
-    image: '/images/posts/getting-started-nextjs.png',
-    excerpt: 'Learn the basics of Next.js in this introductory post.',
-    slug: 'getting-started-nextjs',
-     content: '# This is a first post' // ✅ Correct
+import { PostData } from '@/lib/post-util';
+import ReactMarkdown from 'react-markdown';
 
-  },
-];
+const PostContent = ({ postDetail }: { postDetail: PostData }) => {
+  console.log("post content page", postDetail);
 
-const PostContent = () => {
   return (
     <article className="max-w-2xl mx-auto my-8 p-4 bg-white shadow rounded-lg">
       <PostHeader
-        title={DUMMY_POSTS[0].title}
-        image={DUMMY_POSTS[0].image}
+        title={postDetail.title}
+        image={postDetail.image}
       />
       <div className="mt-6 text-gray-700 leading-relaxed">
-        <ReactMarkdown>{DUMMY_POSTS[0].content}</ReactMarkdown>
+        <ReactMarkdown>{postDetail.content}</ReactMarkdown>
       </div>
     </article>
   );
 };
 
 export default PostContent;
+

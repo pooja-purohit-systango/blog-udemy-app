@@ -1,23 +1,16 @@
 import AllPosts from '@/components/posts/AllPosts'
 import PostsList from '@/components/posts/PostsList'
+import { getAllPost } from '@/lib/post-util';
 import { Post } from '@/types/post-type';
 import React from 'react'
 
 const AllPostspPage = () => {
-    const DUMMY_POSTS: Post[] = [
-        {
-          id: 'p1',
-          title: 'Getting Started with Next.js',
-          date: '2025-05-01',
-          image: '/images/posts/nextjs.jpg',
-          excerpt: 'Learn the basics of Next.js in this introductory post.',
-          slug: 'getting-started-nextjs',
-          content:''
-        },
-      ];
+   const posts = getAllPost();
+
+  //  console.log("posts in get all post page", posts)
   return (
     <>
-     <AllPosts posts =  {DUMMY_POSTS}/>
+     <AllPosts posts =  {posts}/>
     </>
   )
 }

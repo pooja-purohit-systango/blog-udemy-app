@@ -1,25 +1,17 @@
-import FeaturedPosts from "@/components/home-page/FeaturedPosts";
+// app/page.tsx
+import { getAllPost, getFeaturedPosts } from "@/lib/post-util";
 import Hero from "@/components/home-page/Hero";
-import { Post } from "@/types/post-type";
+import FeaturedPosts from "@/components/home-page/FeaturedPosts";
 
+export const revalidate = 60; // ISR every 60 seconds
 
-export default function Home() {
-  const DUMMY_POSTS: Post[] = [
-    {
-      id: 'p1',
-      title: 'Getting Started with Next.js',
-      date: '2025-05-01',
-      image: '/images/posts/nextjs.jpg',
-      excerpt: 'Learn the basics of Next.js in this introductory post.',
-      slug: 'getting-started-nextjs',
-      content: ''
-    },
-  ];
+export default async function Home() {
+  const posts = getFeaturedPosts();
 
   return (
     <div>
       <Hero />
-      <FeaturedPosts posts={DUMMY_POSTS} />
+      <FeaturedPosts posts={posts} />
     </div>
   );
 }

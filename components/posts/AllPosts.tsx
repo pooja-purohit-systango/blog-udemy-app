@@ -7,6 +7,8 @@ interface allPostProps {
 }
 
 const AllPosts = (props : allPostProps) => {
+
+  //console.log("post in all posts component : ", props.posts)
   return (
     <section>
         <h1>All Posts</h1>

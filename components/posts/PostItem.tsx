@@ -4,14 +4,14 @@ import React from "react";
 
 const PostItem = (props: any) => {
   const post = props.post;
+ // console.log( "post in postItem compo", post)
 
   return (
     <li className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
       <Link href={`/posts/${post.slug}`} className="block hover:bg-gray-50 transition-colors">
-        {/* Image with width & height */}
         <div className="w-full">
           <Image
-            src={`/images/posts/${post.slug}.png`}
+            src={`/images/posts/${post.image}`}
             alt={post.title}
             width={600}
             height={300}

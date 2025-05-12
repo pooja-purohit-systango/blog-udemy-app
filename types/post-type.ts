@@ -7,5 +7,9 @@ export interface Post {
     excerpt: string;
     slug: string;
     content : string;
+    isFeatured: boolean
   }
+
+
+  
   
