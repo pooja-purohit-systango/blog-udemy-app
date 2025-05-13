@@ -22,6 +22,8 @@ export default async function Home() {
           <FeaturedPosts posts={posts} />
         </div>
       </section>
+
+      
     </div>
   );
 }
